@@ -825,7 +825,7 @@ int main(int argc, char** argv, MPI_Comm comm, int shrMemPID)
 
   /* w/o MPI-IO use async fwrite, so use 2 threads otherwise, use 1 threads
    */
-#pragma omp parallel num_threads(1+ (!useMPIIO))
+#pragma omp parallel num_threads(1+ (!useMPIIO)) 
   {
     const int tid = omp_get_thread_num();
     if (tid == 0)

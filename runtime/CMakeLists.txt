@@ -1,6 +1,7 @@
 
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(CUDA_VERBOSE_PTXAS
   "On to enable verbose output from the PTXAS assembler."

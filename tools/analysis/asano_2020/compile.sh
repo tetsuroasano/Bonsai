@@ -1,0 +1,11 @@
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 extract_SN.cpp -o extract_SN
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 extract_SN2.cpp -o extract_SN2
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 ring_extract.cpp -o ring_extract
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 fourier_decomposition.cpp -o fourier_decomposition
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 fourier_decomposition_v2.cpp -o fourier_decomposition_v2 -lfftw3f -lm
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 fourier_decomposition_v3.cpp -o fourier_decomposition_v3 -lfftw3f -lm
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 trace_orbit.cpp -o trace_orbit
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 trace_orbit_v2.cpp -o trace_orbit_v2
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 cvt_bonsai2ASCII_mod1000.cpp -o cvt_bonsai2ASCII_mod1000
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 cvt_bonsai2ASCII_rotate_mod1000.cpp -o cvt_bonsai2ASCII_rotate_mod1000
+mpicxx -Wall -O3 -ffast-math -funroll-loops -I ../ -std=c++11 cvt_bonsai2ASCII_rotate_mod2.cpp -o cvt_bonsai2ASCII_rotate_mod2

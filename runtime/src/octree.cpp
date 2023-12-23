@@ -275,7 +275,7 @@ void octree::dumpDataCommon(
   if (sync)
     while (!header[0].done_writing);
   else
-  {
+  { 
     static bool first = true;
     if (first)
     {
