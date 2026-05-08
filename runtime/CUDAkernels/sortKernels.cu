@@ -13,7 +13,8 @@ PROF_MODULE(sortKernels);
 
 // Extract 32-bit word from uint4
 template<int keyIdx>
-struct ExtractBits: public thrust::unary_function<uint4, uint>
+// struct ExtractBits: public thrust::unary_function<uint4, uint>
+struct ExtractBits
 {
   __host__ __device__ __forceinline__ uint operator()(uint4 key) const
   {

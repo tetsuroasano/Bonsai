@@ -3,6 +3,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+
 option(CUDA_VERBOSE_PTXAS
   "On to enable verbose output from the PTXAS assembler."
   OFF
@@ -41,7 +42,7 @@ option(USE_OPENGL
 
 option(USE_THRUST
   "On to use thrust for sorting"
-  OFF
+	OFF
   )
 
 option(USE_CUB
@@ -66,7 +67,7 @@ option(CUDA_KEEP_INTERMEDIATE_FILES
 
 FIND_PACKAGE(CUDA REQUIRED)
 
-add_definitions(-std=c++14)
+add_definitions(-std=c++17)
 set(EXTRA_MPI_LINK_FLAGS)
 if (USE_MPI)
   add_definitions(-DUSE_MPI)
@@ -80,7 +81,9 @@ endif (USE_MPI)
 if (USE_THRUST)
   add_definitions(-DUSE_THRUST)
 endif (USE_THRUST)
-include_directories(${CUDA_TOOLKIT_ROOT_DIR}/../../thrust)
+#include_directories(${CUDA_TOOLKIT_ROOT_DIR}/../../thrust)
+include_directories(${CUDA_TOOLKIT_ROOT_DIR}/targets/x86_64-linux/include/cccl)
+include_directories(${CUDA_TOOLKIT_ROOT_DIR}/targets/x86_64-linux/include)
 
 if (USE_CUB)
     add_definitions(-DUSE_CUB)
@@ -311,7 +314,7 @@ cuda_add_executable(${BINARY_NAME}
   ${HFILES}
   ${CUFILES}
   ${PROFFILES}
-  OPTIONS ${GENCODE} ${VERBOSE_PTXAS} ${DEVICE_DEBUGGING} ${KEEP} -Xcompiler="-fPIE" -std=c++14
+  OPTIONS ${GENCODE} ${VERBOSE_PTXAS} ${DEVICE_DEBUGGING} ${KEEP} -Xcompiler="-fPIE" -std=c++17
   )
 
 
@@ -323,7 +326,7 @@ cuda_add_library(bonsai_amuse
   ${HFILES}
   ${CUFILES}
   ${PROFFILES}
-  OPTIONS ${GENCODE} ${VERBOSE_PTXAS} ${DEVICE_DEBUGGING} ${KEEP} -Xcompiler="-fPIE" -std=c++14
+  OPTIONS ${GENCODE} ${VERBOSE_PTXAS} ${DEVICE_DEBUGGING} ${KEEP} -Xcompiler="-fPIE" -std=c++17
   )
 
 

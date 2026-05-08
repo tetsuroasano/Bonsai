@@ -1,5 +1,5 @@
 #include "octree.h"
-#include "nvToolsExt.h"
+#include "nvtx3/nvToolsExt.h"
 
 //External imports in order to call thrust or cub functions which have been compiled by nvcc
 extern "C" void thrustDataReorderU4 (const int N, my_dev::dev_mem<uint> &permutation, my_dev::dev_mem<uint4>  &dIn, my_dev::dev_mem<uint4>  &dOut);
